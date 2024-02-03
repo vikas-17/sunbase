@@ -1,27 +1,62 @@
+This is a simple project which performs the crud operations(insert,update,delete) in database using api.
+
+Spring Boot – Back End Application
+Angular – Front End Application
+MySql- Database
+
+
+# Database
+
+if you are using existing database table then you must set this property as update in "application.properties" file-
+
+"spring.jpa.hibernate.ddl-auto=update"
+
+if not then set it as create so it will create new table each time
+
+"spring.jpa.hibernate.ddl-auto=create" after running project you must change it to "update"  otherwise everytime it will create the new table with the specified name and it will delete the table if it already exist so your data will be lost. 
+
+
 # Frontend
+Installing Angular CLI by command:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+-npm install -g @angular/cli
 
-## Development server
+After that create the new Project of Angular running by the following command:
+-ng new frontend --no-standalone --routing --ssr=false (Select the SCSS Style for the Advanced CSS and Press )
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+after this Creating a new Component Student Crud
 
-## Code scaffolding
+-ng g c customer 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After that install the Bootstrap by typing the following command
 
-## Build
+-npm i bootstrap
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+After installed you have to set the path in to style.scss file
 
-## Running unit tests
+@import "bootstrap/dist/css/bootstrap.css";
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# To Run
+Backend-
+Up the backend server by running it.
 
-## Running end-to-end tests
+frontend- on command line type command:
+-ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+# How works-
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In the front page you will see the form to register the customer which has fields like 
+first_name,last_name, street, address, city, state, email, phone.
+
+after filling the fields click on "submit" button then alert message will appear "customer Registered Successfully" and the saved data will appear in table below.
+
+update and delete:-
+
+In the table there will be 2 options available "edit" and "delete":
+
+Update-if we click on edit then the selected row data will appear on the form and we can edit the data in the fields and click on submit to submit the customer and alert will appear like "customer Registered Updated".
+
+delete- if we click on delete button the selected row data will get deleted from the database and alert will appear like "customer Deleted"
+
+

@@ -63,7 +63,7 @@ constructor(private http: HttpClient )
     this.http.post("http://localhost:8084/api/v1/customer/save",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Employee Registered Successfully");
+        alert("customer Registered Successfully");
         this.getAllCustomer();
         this.first_name= '';
         this.last_name= '';
@@ -105,7 +105,7 @@ constructor(private http: HttpClient )
     this.http.put("http://localhost:8084/api/v1/customer/update",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Employee Registered Updated")
+        alert("customer Registered Updated")
         this.getAllCustomer();
         this.first_name= '';
         this.last_name= '';
@@ -138,7 +138,7 @@ constructor(private http: HttpClient )
     this.http.delete("http://localhost:8084/api/v1/customer/deletecustomer"+ "/"+ data.customerid,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Employee Deleted")
+        alert("customer Deleted")
         this.getAllCustomer();
         this.first_name= '';
         this.last_name= '';
